@@ -1,0 +1,264 @@
+@import 'reset.sass'
+
+body
+  font-family: Arial, sans-serif
+  font-size: 62.5%
+/* 16px * 62.5 = 10px = 1rem */
+
+.container
+  width: 58.33vw
+  margin: 5% auto
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  header
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .header-logo
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 5%
+
+      div a
+        font-size: 1.2rem
+        font-weight: 400
+        color: #929292
+
+      .header-logo__img
+        width: 27.87%
+
+        img
+          width: 100%
+
+    .header-bg
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      z-index: 0
+
+      .header-bg__color
+        width: 100%
+
+      .header-bg__line
+        width: 100%
+        position: absolute
+        bottom: -4.8%
+        z-index: 1
+
+      .header-bg__imgFox
+        width: 25.21%
+        position: absolute
+        top: 7.69%
+        z-index: 3
+
+        &:after
+          content: ""
+          width: 100%
+          height: 100%
+          background-color: #ffffff
+          border-radius: 50%
+          position: absolute
+          left: 0
+          top: 16%
+          z-index: -1
+
+      .header-bg__color img, .header-bg__line img, .header-bg__imgFox img
+        width: 100%
+
+  main
+    width: 85.71%
+    margin-top: 11%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    .main-headText
+      font-size: 2rem
+      color: #2A2F3B
+      margin-bottom: 5%
+
+      .title
+        font-weight: 600
+        margin-bottom: 5%
+
+      .text
+        font-size: 1.6rem
+
+    .main-info
+      width: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      .main-info__text
+        width: 100%
+        align-self: flex-start
+        display: flex
+
+        div
+          font-size: 1.5rem
+
+          &:first-child
+            width: 30%
+            margin-bottom: 3%
+
+        .text
+          color: #979797
+
+      .btn
+        text-decoration: none
+        font-size: 1.3rem
+        color: #ffffff
+        padding: 21px 35px
+        background-color: #9C27B0
+        border-radius: 30px
+        margin: 3%
+        cursor: pointer
+
+    .main-description
+      display: flex
+      flex-direction: column
+      margin-top: 5%
+      background-color: #F3F5FE
+      padding: 30px 38px
+      border-radius: 20px
+
+      .title
+        font-size: 1.5rem
+        text-align: center
+        color: #2A2F3B
+        font-weight: bold
+        margin-bottom: 5%
+
+      .text
+        font-size: 1.2rem
+        text-align: center
+        color: #2A2F3B
+        line-height: 2.1rem
+        margin-bottom: 5%
+
+      .linksContainer
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-gap: 10px
+
+        .link-btn
+          text-decoration: none
+          padding: 20px 25px
+          border-radius: 30px
+          border: 1px solid #9C27B0
+          font-family: SF Pro Display, sans-serif
+          font-size: 0.7rem
+          color: #9C27B0
+          text-align: center
+
+@media screen and (max-width: 768px)
+  .container
+    header
+      .header-logo div a
+        font-size: 1rem
+
+    main
+      .main-headText
+        font-size: 1.4rem
+
+        .text
+          font-size: 1.2rem
+
+      .main-info .main-info__text div
+        font-size: 1.2rem
+
+      .main-description
+        .title
+          font-size: 1.2rem
+
+        .text
+          font-size: 1rem
+
+        .linksContainer
+          grid-template-columns: 1fr
+
+          .link-btn
+            font-size: 1.1rem
+
+@media screen and (max-width: 540px)
+  .container
+    main
+      .main-headText
+        font-size: 1.1rem
+
+        .text
+          font-size: 1rem
+
+      .main-info
+        .main-info__text
+          div
+            font-size: 0.8rem
+
+        .btn
+          font-size: 1rem
+          padding: 18px 30px
+
+      .main-description
+        padding: 15px 18px
+
+        .title
+          font-size: 1rem
+
+        .text
+          font-size: 0.8rem
+          line-height: 1rem
+
+        .linksContainer
+          grid-template-columns: 1fr
+
+          .link-btn
+            font-size: 0.8rem
+            padding: 13px 19px
+            border-radius: 20px
+
+@media screen and (max-width: 414px)
+  .container
+    width: 85vw
+    main
+        .main-headText
+            font-size: 0.8rem
+
+            .text
+                font-size: 0.7rem
+        .main-info
+            .main-info__text
+                div
+                    font-size: 0.7rem
+
+            .btn
+                font-size: 0.8rem
+                padding: 13px 27px
+
+        .main-description
+            padding: 10px 13px
+
+            .title
+                font-size: 0.8rem
+
+            .text
+                font-size: 0.6rem
+                line-height: 1rem
+
+            .linksContainer
+                grid-template-columns: 1fr 1fr
+
+                .link-btn
+                    font-size: 0.6rem
+                    padding: 10px 13px
+                    border-radius: 20px
