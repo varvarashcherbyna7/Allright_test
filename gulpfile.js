@@ -1,12 +1,4 @@
-// const gulp = require('gulp'),
-//     autoprefixer = require('gulp-autoprefixer'),
-//     imagemin = require('gulp-imagemin'),
-//     sourcemaps = require('gulp-sourcemaps'),
-//     browserSync = require('browser-sync').create(),
-//     clean = require('gulp-clean'),
-//     ghPages = require('gulp-gh-pages');
-
-const {src, dest, series, watch} = require('gulp')
+const {gulp, src, dest, series, watch} = require('gulp')
 const sass = require('gulp-sass');
 const csso = require('gulp-csso');
 const include = require('gulp-file-include');
@@ -16,6 +8,7 @@ const del = require('del');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const sync = require('browser-sync').create();
+const deploy = require('gulp-gh-pages');
 
 
 function html() {
@@ -65,7 +58,10 @@ exports.serve = series(clear, scss, html, img, serve)
 exports.clear = clear
 
 
-// gulp.task('deploy', function() {
-//     return gulp.src('./build/**/*')
-//         .pipe(ghPages());
-// });
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+    return gulp.src("./build/**/*")
+        .pipe(deploy())
+});
